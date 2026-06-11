@@ -22,6 +22,7 @@ creds = Credentials.from_service_account_info(
 )
 
 client = gspread.authorize(creds)
+sheet = client.open("Panchamahabhuta Responses").sheet1
 # ---------- HEADER ----------
 col1, col2 = st.columns([1, 5])
 
