@@ -22,7 +22,7 @@ creds = Credentials.from_service_account_info(
 )
 
 client = gspread.authorize(creds)
-sheet = client.open("responses.xlsx").sheet2
+sheet = client.open("responses.xlsx").worksheet("Sheet2")
 # ---------- HEADER ----------
 col1, col2 = st.columns([1, 5])
 
