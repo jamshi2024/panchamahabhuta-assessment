@@ -216,29 +216,30 @@ if st.button("Generate My Profile"):
         "Secondary_Element": secondary,
         "Personality_Type": personality
     }
-
     record.update(scores)
-    df = pd.DataFrame([record])
- sheet.append_row([
-    assessment_id,
-    name,
-    register_no,
-    programme,
-    semester,
-    section,
-    gender,
-    age,
-    email,
-    mobile,
-    scores["Earth (Prithvi)"],
-    scores["Water (Jala)"],
-    scores["Fire (Agni)"],
-    scores["Air (Vayu)"],
-    scores["Space (Akasha)"],
-    dominant,
-    secondary,
-    personality,
-    datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-])
 
-st.success("Response Saved Successfully!")
+    df = pd.DataFrame([record])
+
+    sheet.append_row([
+        assessment_id,
+        name,
+        register_no,
+        programme,
+        semester,
+        section,
+        gender,
+        age,
+        email,
+        mobile,
+        scores["Earth (Prithvi)"],
+        scores["Water (Jala)"],
+        scores["Fire (Agni)"],
+        scores["Air (Vayu)"],
+        scores["Space (Akasha)"],
+        dominant,
+        secondary,
+        personality,
+        datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    ])
+
+    st.success("Response Saved Successfully!")
