@@ -7,3 +7,5 @@ pingouin
 numpy
 scipy
 matplotlib
+gspread
+oauth2client
