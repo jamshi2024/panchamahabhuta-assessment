@@ -9,3 +9,5 @@ scipy
 matplotlib
 gspread
 oauth2client
+gspread
+google-auth
