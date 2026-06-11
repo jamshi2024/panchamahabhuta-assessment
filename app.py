@@ -218,16 +218,27 @@ if st.button("Generate My Profile"):
     }
 
     record.update(scores)
-
     df = pd.DataFrame([record])
+ sheet.append_row([
+    assessment_id,
+    name,
+    register_no,
+    programme,
+    semester,
+    section,
+    gender,
+    age,
+    email,
+    mobile,
+    scores["Earth (Prithvi)"],
+    scores["Water (Jala)"],
+    scores["Fire (Agni)"],
+    scores["Air (Vayu)"],
+    scores["Space (Akasha)"],
+    dominant,
+    secondary,
+    personality,
+    datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+])
 
-    file_name = "responses.xlsx"
-
-    if os.path.exists(file_name):
-        existing = pd.read_excel(file_name)
-        combined = pd.concat([existing, df], ignore_index=True)
-        combined.to_excel(file_name, index=False)
-    else:
-        df.to_excel(file_name, index=False)
-
-    st.success("Response Saved Successfully!")
+st.success("Response Saved Successfully!")
